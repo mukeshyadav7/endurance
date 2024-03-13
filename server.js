@@ -1,8 +1,10 @@
-var express = require('express');
-var app = express();
+const http = require('http');
 
-// define routes here..
-
-var server = app.listen(5000, function () {
-    console.log('Node server is running..');
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/html');
+  res.end('<h1>Transflower Store</h1>');
+});
+server.listen(7000, () => {
+  console.log(`Server running at 7000`);
 });
